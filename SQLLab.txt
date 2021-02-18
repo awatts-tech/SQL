@@ -16,18 +16,21 @@
 FROM Orders
 INNER JOIN Customers ON Orders.customer_id = Customers.customer_id;
 
-15 SELECT Customers.customer_id, Orders.order_id
+14 SELECT Customers.customer_id, Orders.order_id
 FROM Customers
 LEFT JOIN Orders ON Customers.customer_id = Orders.customer_id;
 
-16 SELECT  Orders.order_id, Customers.customer_id
+14 SELECT  Orders.order_id, Customers.customer_id
 FROM Orders
 RIGHT JOIN Customers ON orders.customer_id = customers.customer_id;
 
-17 SELECT Orders.ship_city, Orders.ship_country, Customers.contact_name, Customers.country
-FROM Orders
-INNER JOIN Customers ON Orders.ship_country = Customers.country WHERE Customers.country = 'London';
+15 SELECT ship_city, ship_country
+FROM orders;
+INNER JOIN employees ON orders.employee_ID= empoyees.employee_ID WHERE city = 'London';
 
+16 SELECT * FROM orders INNER JOIN order_detaisl on orders.order_ID = order_details.order_ID
+ INNER JOIN products ON products.product_ID = order_details.product_id
+WHERE discontinued =1;
 
-19 SELECT first_name FROM employees WHERE reports_to= null;
-20 SELECT first_name FROM employees WHERE reports_to= "Andrew";
+17 SELECT first_name FROM employees WHERE reports_to= null;
+18  SELECT first_name FROM employees WHERE reports_to= "Andrew";
